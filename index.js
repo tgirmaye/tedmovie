@@ -19,10 +19,7 @@ server.listen(port,()=>{
  console.log(`listening on port ${port}`);
 });
 
-
-
 let io = socket(server);
-
 
 io.on('connection',(socket)=>{
   console.log(socket.id);
@@ -35,11 +32,7 @@ io.on('connection',(socket)=>{
       getAnswer(answer);
     })
 });
-  
-// app.get('/recive',(req,res)=>{
-//   res.sendFile(__dirname+"/public/b.html")
-// })
-  
+
 
 
 function getOffer(offer){

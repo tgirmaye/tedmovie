@@ -16,16 +16,6 @@ const localConnection = new RTCPeerConnection();
 
 const socket = io();
 
-
-
-    // (async()=>{
-    //   let stream= await navigator.mediaDevices.getUserMedia({video:true})
-    //   vid.srcObject = stream;
-    //   localConnection.addStream(stream);
-    //   let offer=await localConnection.createOffer();
-    //   localConnection.setLocalDescription(offer);
-    // })();
-      
     vid.src="vid.mp4"
       
       vid.onplay=async()=>{
@@ -44,16 +34,10 @@ console.log(" NEW ice candidnat!! on localconnection reprinting SDP:  " +e)
   
  }
  
-
-
-//document.getElementById('getAnswer').addEventListener('click',()=>{
-  
   socket.on('ans',(answer)=>{
     vid.play();
     localConnection.setRemoteDescription(answer)
   });
-//});
-
 
 
 </script>
